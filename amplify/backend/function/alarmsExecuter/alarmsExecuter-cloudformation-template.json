@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "alarmsappbackendLambdaRole0bf8ed4a",
+            "alarmsappbackendLambdaRolef63c3892",
             {
               "Fn::Join": [
                 "",
                 [
-                  "alarmsappbackendLambdaRole0bf8ed4a",
+                  "alarmsappbackendLambdaRolef63c3892",
                   "-",
                   {
                     "Ref": "env"

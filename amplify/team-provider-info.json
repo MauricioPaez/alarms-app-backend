@@ -15,11 +15,11 @@
       "function": {
         "alarmsScheduler": {
           "deploymentBucketName": "amplify-alarmsappbackend-staging-25646-deployment",
-          "s3Key": "amplify-builds/alarmsScheduler-6b416f79716a61383547-build.zip"
+          "s3Key": "amplify-builds/alarmsScheduler-515864355469582b3266-build.zip"
         },
         "alarmsExecuter": {
           "deploymentBucketName": "amplify-alarmsappbackend-staging-25646-deployment",
-          "s3Key": "amplify-builds/alarmsExecuter-336130336275426b4533-build.zip"
+          "s3Key": "amplify-builds/alarmsExecuter-39786233595738373644-build.zip"
         }
       }
     }

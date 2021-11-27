@@ -8,11 +8,8 @@ from datetime import datetime
 def handler(event, context):
     print('received event:')
     print(event)
-
-    print('lambda context:')
-    print(context)
-
-    print('lambda env: ' + os.environ['ENV'])
+    
+    env = os.environ['ENV']
 
     try:
         request_body = json.loads(event['body'])
@@ -39,8 +36,17 @@ def handler(event, context):
     # Create CloudWatchEvents client
     cloudwatch_events = boto3.client('events')
 
+    # Create LambdaClient
+    lambdaClient = boto3.client('lambda')
+
+    response = lambdaClient.get_function(
+        FunctionName='alarmsExecuter-' + env
+    )
+
+    executerArn = response['Configuration']['FunctionArn']
+
     if(action == 'create'):
-        return create_rule(request_body, cloudwatch_events)
+        return create_rule(request_body, executerArn, cloudwatch_events)
 
     if(action == 'query'):
         return query_rule(request_body, cloudwatch_events)
@@ -75,7 +81,7 @@ def query_rule(requestBody, cloudwatch_events):
         return json_response(str(e), 400)
 
 
-def create_rule(requestBody, cloudwatch_events):
+def create_rule(requestBody, executerArn, cloudwatch_events):
 
     name = str(read_body_parameter(requestBody, 'id'))
     date = read_body_parameter(requestBody, 'date')
@@ -109,17 +115,17 @@ def create_rule(requestBody, cloudwatch_events):
         )
 
         # Put target for rule
-        updated_rule_response = cloudwatch_events.put_targets(
+        created_rule_response = cloudwatch_events.put_targets(
             Rule=name,
             Targets=[
                 {
-                    'Arn': 'arn:aws:lambda:us-west-2:754771505914:function:executer-staging',
+                    'Arn': executerArn,
                     'Id': name,
                     'Input': '{ "id" : ' + name + ' }'
                 }
             ]
         )
-        print(updated_rule_response)
+        print(created_rule_response)
 
         return json_response("New Rule created successfully: " + new_rule_response['RuleArn'], 200)
 
