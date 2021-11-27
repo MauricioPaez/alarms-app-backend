@@ -23,5 +23,24 @@
         }
       }
     }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-alarmsappbackend-dev-04647-authRole",
+      "UnauthRoleArn": "arn:aws:iam::754771505914:role/amplify-alarmsappbackend-dev-04647-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::754771505914:role/amplify-alarmsappbackend-dev-04647-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-alarmsappbackend-dev-04647-deployment",
+      "UnauthRoleName": "amplify-alarmsappbackend-dev-04647-unauthRole",
+      "StackName": "amplify-alarmsappbackend-dev-04647",
+      "StackId": "arn:aws:cloudformation:us-west-2:754771505914:stack/amplify-alarmsappbackend-dev-04647/701d9f50-4f45-11ec-ba6b-0a81abd1f973",
+      "AmplifyAppId": "d34t666gjefha1"
+    },
+    "categories": {
+      "function": {
+        "alarmsScheduler": {},
+        "alarmsExecuter": {}
+      }
+    }
   }
 }
