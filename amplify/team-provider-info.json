@@ -38,8 +38,14 @@
     },
     "categories": {
       "function": {
-        "alarmsScheduler": {},
-        "alarmsExecuter": {}
+        "alarmsScheduler": {
+          "deploymentBucketName": "amplify-alarmsappbackend-dev-04647-deployment",
+          "s3Key": "amplify-builds/alarmsScheduler-515864355469582b3266-build.zip"
+        },
+        "alarmsExecuter": {
+          "deploymentBucketName": "amplify-alarmsappbackend-dev-04647-deployment",
+          "s3Key": "amplify-builds/alarmsExecuter-39786233595738373644-build.zip"
+        }
       }
     }
   }
