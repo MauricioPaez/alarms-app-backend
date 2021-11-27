@@ -1,0 +1,27 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-alarmsappbackend-staging-25646-authRole",
+      "UnauthRoleArn": "arn:aws:iam::754771505914:role/amplify-alarmsappbackend-staging-25646-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::754771505914:role/amplify-alarmsappbackend-staging-25646-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-alarmsappbackend-staging-25646-deployment",
+      "UnauthRoleName": "amplify-alarmsappbackend-staging-25646-unauthRole",
+      "StackName": "amplify-alarmsappbackend-staging-25646",
+      "StackId": "arn:aws:cloudformation:us-west-2:754771505914:stack/amplify-alarmsappbackend-staging-25646/a956bf80-4f2d-11ec-a350-0acfa0ce2b03",
+      "AmplifyAppId": "d34t666gjefha1"
+    },
+    "categories": {
+      "function": {
+        "alarmsScheduler": {
+          "deploymentBucketName": "amplify-alarmsappbackend-staging-25646-deployment",
+          "s3Key": "amplify-builds/alarmsScheduler-6b416f79716a61383547-build.zip"
+        },
+        "alarmsExecuter": {
+          "deploymentBucketName": "amplify-alarmsappbackend-staging-25646-deployment",
+          "s3Key": "amplify-builds/alarmsExecuter-336130336275426b4533-build.zip"
+        }
+      }
+    }
+  }
+}
